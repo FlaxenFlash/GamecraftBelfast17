@@ -1,19 +1,11 @@
-﻿using Assets.Source.Tools;
-using Boo.Lang;
+﻿using UnityEngine;
 
 namespace Assets.Source
 {
-	public class Faction : BaseComponent
+	[CreateAssetMenu(menuName = "Faction")]
+	public class Faction : ScriptableObject
 	{
-		public List<PolicyOpinion> PolicyOpinions = new List<PolicyOpinion>
-		{
-//			new PolicyOpinion(Policy.War),
-//			new PolicyOpinion(Policy.Torture),
-//			new PolicyOpinion(Policy.Castles),
-//			new PolicyOpinion(Policy.Charity),
-//			new PolicyOpinion(Policy.Brothels),
-//			new PolicyOpinion(Policy.Bargins),
-//			new PolicyOpinion(Policy.Tax),
-		};
+		public float Anger;
+		public PolicyOpinion Opinions;
 	}
 }
