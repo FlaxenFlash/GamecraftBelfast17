@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace Assets.Source
 {
@@ -6,6 +7,7 @@ namespace Assets.Source
 	public class FundingLevel : ScriptableObject
 	{
 		public float MaxValue = 100;
+        [NonSerialized]
 		public float CurrentValue;
 
 		public float GetNormalisedValue()

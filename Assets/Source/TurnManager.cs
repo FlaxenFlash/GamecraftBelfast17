@@ -27,6 +27,22 @@ namespace Assets.Source
 
         public void HandleMessage(TaxesSetMessage message)
         {
+            foreach (Faction f in factionList)
+            {
+                foreach (PlayedPromiseMessage m in promisesList)
+                {
+                    if (f == m.Faction)
+                    {
+                        if (!m.Promise.WasProsmiseFulfilled())
+                        {
+                            f.Anger += m.Promise.GetFundingChange();
+                        }
+                    }
+                }
+            }
+
+            promisesList.Clear();
+
             PromiseUi.SetActive(false);
             ActionUi.SetActive(false);
             AppeasementUi.SetActive(true);
@@ -37,20 +53,6 @@ namespace Assets.Source
             PromiseUi.SetActive(true);
             ActionUi.SetActive(false);
             AppeasementUi.SetActive(false);
-
-            foreach(Faction f in factionList)
-            {
-                foreach(PlayedPromiseMessage m in promisesList)
-                {
-                    if(f == m.Faction)
-                    {
-                        //if(m.Promise.WasProsmiseFulfilled())
-                        //{
-                            f.Anger += m.Promise.GetFundingChange();
-                        //}
-                    }
-                }
-            }
         }
 
         public void HandleMessage(PlayedPromiseMessage message)

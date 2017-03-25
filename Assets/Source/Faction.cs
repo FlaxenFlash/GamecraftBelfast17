@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Source
 {
 	[CreateAssetMenu(menuName = "Faction")]
 	public class Faction : ScriptableObject
 	{
-		public float Anger;
+        [NonSerialized]
+        public float Anger;
 		public PolicyOpinion Opinions;
 	}
 }
