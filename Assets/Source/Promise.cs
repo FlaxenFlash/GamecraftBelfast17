@@ -23,7 +23,7 @@ namespace Assets.Source
 
 		public float GetFundingChange()
 		{
-			return FundingLevel.CurrentValue - _originalFundingLevel;
+			return (FundingLevel.CurrentValue - _originalFundingLevel) / FundingLevel.MaxValue;
 		}
 	}
 }
