@@ -1,7 +1,5 @@
 ﻿using System;
-using Assets.Source.ExternalCode;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Source
 {
