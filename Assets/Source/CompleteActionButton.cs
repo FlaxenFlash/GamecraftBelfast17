@@ -7,4 +7,14 @@ public class CompleteActionButton : MonoBehaviour
 	{
 		MessagingCenter.BroadcastMessage(new TaxesSetMessage());
 	}
+
+    public void CompletePromise()
+    {
+        MessagingCenter.BroadcastMessage(new PromiseSetMessage());
+    }
+
+    public void CompleteAppeasement()
+    {
+        MessagingCenter.BroadcastMessage(new AppeasementSetMessage());
+    }
 }
